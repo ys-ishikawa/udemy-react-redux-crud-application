@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-const App = () => (<Counter></Counter>);
+const App = () => (
+  <Counter />
+);
 
 class Counter extends React.Component {
   constructor(props) {
