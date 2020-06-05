@@ -12,7 +12,7 @@ export const readEvents = () => async dispatch => {
     dispatch({ type: READ_EVENTS, responce });
 };
 
-export const postEvent = () => async dispatch => {
-    const responce = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`);
+export const postEvent = (values) => async dispatch => {
+    const responce = await axios.post(`${ROOT_URL}/events${QUERYSTRING}`, values);
     dispatch({ type: CREATE_EVENT, responce });
 };
