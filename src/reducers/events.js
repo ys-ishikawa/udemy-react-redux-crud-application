@@ -1,13 +1,12 @@
+import _ from 'lodash';
 import { READ_EVENTS } from '../actions';
 
-
-
 // Reducerを定義
-export default (state = {}, action) => {
+export default (events = {}, action) => {
     switch(action.type) {
     case READ_EVENTS:
-        return state;
+        return _.mapKeys(action.responce.data, 'id');
     default:
-        return state;
+        return events;
     }
 }
