@@ -10,16 +10,16 @@ import {
 // Reducerを定義（(previousState, action) => newState）
 export default (events = {}, action) => {
     switch(action.type) {
-    case READ_EVENTS:
-        return _.mapKeys(action.responce.data, 'id');
-    case DELETE_EVENT:
-        delete events[action.id]
-        return { ...events };
     case CREATE_EVENT:
     case READ_EVENT:
     case UPDATE_EVENT:
         const data = action.responce.data;
         return {... events, [data.id]: data}
+    case READ_EVENTS:
+        return _.mapKeys(action.responce.data, 'id');
+    case DELETE_EVENT:
+        delete events[action.id]
+        return { ...events };
     default:
         return events;
     }
