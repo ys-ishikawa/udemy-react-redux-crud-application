@@ -34,9 +34,7 @@ class EventsNew extends React.Component {
 
   render() {
     const { handleSubmit, pristine, submitting, invalid } = this.props;
-    const style = {
-      margin: 12
-    }
+    const style = { margin: 12 };
     return(
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <div>
